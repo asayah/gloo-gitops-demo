@@ -20,7 +20,7 @@ spec:
   # HPA reference (optional)
   service:
     # ClusterIP port number
-    port: 80
+    port: 3000
     # container port number or name (optional)
     targetPort: 3000
   analysis:
