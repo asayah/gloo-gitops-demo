@@ -1,7 +1,7 @@
 apiVersion: flagger.app/v1beta1
 kind: Canary
 metadata:
-  name: bookinfo
+  name: hw
 spec:
   # upstreamRef (optional)
   # defines an upstream to copy the spec from when flagger generates new upstreams.
@@ -16,7 +16,7 @@ spec:
   targetRef:
     apiVersion: apps/v1
     kind: Deployment
-    name: reviews-v1
+    name: hw
   # HPA reference (optional)
   service:
     # ClusterIP port number
@@ -56,10 +56,10 @@ spec:
         timeout: 10s
         metadata:
           type: bash
-          cmd: "curl http://reviews-v1-canary.default:9080/reviews/1"
+          cmd: "curl http://hw.default:3000"
       - name: load-test
         url: http://flagger-loadtester.test/
         timeout: 5s
         metadata:
           type: cmd
-          cmd: "hey -z 2m -q 5 -c 2  http://gateway-proxy.gloo-system/productpage"
+          cmd: "hey -z 2m -q 5 -c 2  http://gateway-proxy.gloo-system"

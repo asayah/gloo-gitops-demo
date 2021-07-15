@@ -12,5 +12,5 @@ spec:
          - prefix: /
         delegateAction:
           ref:
-            name: reviews-v1
+            name: hw
             namespace: default
