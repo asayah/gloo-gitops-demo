@@ -20,7 +20,7 @@ spec:
   # HPA reference (optional)
   service:
     # ClusterIP port number
-    port: 3000
+    port: 80
     # container port number or name (optional)
     targetPort: 3000
   analysis:
@@ -56,7 +56,7 @@ spec:
         timeout: 10s
         metadata:
           type: bash
-          cmd: "curl http://hw.default:3000"
+          cmd: "curl http://hw.default:80"
       - name: load-test
         url: http://flagger-loadtester.test/
         timeout: 5s
