@@ -12,5 +12,5 @@ spec:
          - prefix: /
         delegateAction:
           ref:
-            name: bookinfo
-            namespace: bookinfo
+            name: reviews-v1
+            namespace: default
